@@ -3,7 +3,10 @@
 module.exports = {
   content: ['./src/**/*.tsx'],
   theme: {
-
+    fontFamily: {
+      sans: 'Roboto, sans-serif',
+      mono: ['Mono monospace'],
+    },
     fontSize: {
       xs: 12,
       sm: 14,
@@ -32,16 +35,12 @@ module.exports = {
         100: '#E1E1E6',
       },
       red: {
-        900: '#00875F',
-        500: '#F03847',
+        900: '#7A1921',
+        500: '#AB222E',
       },
     },
   },
   extend: {
-    fontFamily: {
-      roboto: 'Roboto sans- serif',
-      robotoMono: 'Roboto Mono monospace',
-    },
   },
   plugins: [],
 }

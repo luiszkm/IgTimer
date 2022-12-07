@@ -1,9 +1,10 @@
 import { Button } from './components/Button'
 
-export function App() {
+export function Home() {
   return (
     <div>
       <Button />
+      aaaaa
     </div>
   )
 }
