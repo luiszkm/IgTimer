@@ -1,15 +1,9 @@
-import { Button } from "./components/Button";
-
+import { Button } from './components/Button'
 
 export function App() {
-
   return (
-   <div>
-    <Button />
-    
-    
-   </div>
+    <div>
+      <Button />
+    </div>
   )
 }
-
-

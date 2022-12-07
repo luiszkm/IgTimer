@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./src/**/*.tsx'],
@@ -9,7 +10,7 @@ module.exports = {
       md: 16,
       lg: 18,
       xl: 24,
-      'mega': 160,
+      mega: 160,
     },
     colors: {
       transparent: 'transparent',
@@ -17,9 +18,9 @@ module.exports = {
       'white': '#FFFFFF',
 
       green: {
-        800: "#015F43",
-        500: "#00875F",
-        300: "#00B37E"
+        800: '#015F43',
+        500: '#00875F',
+        300: '#00B37E',
       },
       gray: {
         900: '#121214',
@@ -33,8 +34,8 @@ module.exports = {
       red: {
         900: '#00875F',
         500: '#F03847',
-      }
-    }
+      },
+    },
   },
   extend: {
     fontFamily: {
