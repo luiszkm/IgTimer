@@ -1,3 +1,5 @@
+import { Status } from "../components/Status";
+
 export function History() {
   return (
     <section className="flex flex-col gap-8 ">
@@ -18,7 +20,7 @@ export function History() {
             <td className="py-4 px-6 mt-2">Conserto de débitos técnicos </td>
             <td className="py-4 px-6 mt-2">Conserto de débitos técnicos </td>
             <td className="py-4 px-6 mt-2">Conserto de débitos técnicos </td>
-            <td className="py-4 px-6 mt-2">Conserto de débitos técnicos </td>
+            <td className="py-4 px-6 mt-2"> <Status /> </td>
           </tr>
 
           <tr className="bg-gray-700 border-t-4 border-t-gray-800 ">
