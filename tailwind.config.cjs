@@ -5,7 +5,7 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: 'Roboto, sans-serif',
-      mono: ['Mono monospace'],
+      mono: ['Roboto Mono, monospace'],
     },
     fontSize: {
       xs: 12,
@@ -28,7 +28,8 @@ module.exports = {
       gray: {
         900: '#121214',
         800: '#202024',
-        700: '#323238',
+        700: '#29292E',
+        600: '#323238',
         500: '#7C7C8A',
         300: '#8D8D99',
         200: '#C4C4CC',
