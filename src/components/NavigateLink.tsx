@@ -7,7 +7,6 @@ interface ActiveLinkProps extends NavLinkProps {
 export function NavigateLink({ children, ...rest }: ActiveLinkProps) {
   const { pathname } = useLocation()
   const active = pathname === rest.to
-  console.log(active)
   return (
     <NavLink className={active ? "text-green-500" : ""}
       {...rest}>
