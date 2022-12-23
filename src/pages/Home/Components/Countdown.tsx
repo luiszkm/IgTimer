@@ -1,12 +1,10 @@
-import { useState, useEffect } from "react"
+import {  useEffect } from "react"
 import { differenceInSeconds } from 'date-fns'
 import { useCycles } from "../../../hooks/useCycles"
 
 
 export function Countdown() {
   const { activeCycle, activeCycleId,amountSecondsPassed, setAmountSecondsPassed, setCycles } = useCycles()
-
-
 
   const totalSeconds = activeCycle ? activeCycle.amountMinutes * 60 : 0
   const currentSeconds = activeCycle ? totalSeconds - amountSecondsPassed : 0
@@ -44,6 +42,9 @@ export function Countdown() {
   useEffect(() => {
     if (activeCycle) {
       document.title = `${minutes}: ${seconds}`
+    }else{
+      document.title = `Ignite Timer`
+
     }
   }, [minutes, seconds, activeCycle])
 

@@ -13,11 +13,11 @@ export interface CycleContextDataProps {
   activeCycle?: Cycle | undefined
   activeCycleId: string | null
   amountSecondsPassed: number
+  cycles: Cycle[]
   setAmountSecondsPassed: Dispatch<SetStateAction<number>>
-  setCycles : Dispatch<SetStateAction<Cycle[]>>
-  setActiveCycleId : Dispatch<SetStateAction<string | null>>
+  setCycles: Dispatch<SetStateAction<Cycle[]>>
+  setActiveCycleId: Dispatch<SetStateAction<string | null>>
 
-  
 }
 
 interface CycleContextProps {
@@ -28,11 +28,12 @@ export const CycleContext = createContext({
 
 } as CycleContextDataProps)
 
-
 export function CyclesContextProvider({ children }: CycleContextProps) {
+  
+  const [cycles, setCycles] = useState<Cycle[]>([])
 
   const [activeCycleId, setActiveCycleId] = useState<string | null>(null)
-  const [cycles, setCycles] = useState<Cycle[]>([])
+  
   const [amountSecondsPassed, setAmountSecondsPassed] = useState(0)
 
   const activeCycle = cycles.find((cycle) => cycle.id === activeCycleId)
@@ -42,10 +43,11 @@ export function CyclesContextProvider({ children }: CycleContextProps) {
       activeCycleId,
       activeCycle,
       amountSecondsPassed,
+      cycles,
       setAmountSecondsPassed,
       setCycles,
       setActiveCycleId,
-      
+
     }}>
       {children}
     </CycleContext.Provider>

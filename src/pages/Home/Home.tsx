@@ -6,7 +6,6 @@ import { FormProvider, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod'
 import zod from 'zod'
 
-
 interface Cycle {
   id: string;
   task: string
@@ -26,8 +25,6 @@ type newCycleFormData = zod.infer<typeof newCycleFormValidationSchema>
 export function Home() {
   const { activeCycle, activeCycleId, setActiveCycleId, setCycles, setAmountSecondsPassed } = useCycles()
 
-
-
   const newCycleFrom = useForm<newCycleFormData>({
     resolver: zodResolver(newCycleFormValidationSchema),
     defaultValues: {
@@ -36,12 +33,9 @@ export function Home() {
     }
   })
 
-
-
   const { handleSubmit, watch, reset } = newCycleFrom
 
   const task = watch('task')
-console.log(task);
 
   function handleSubmitForm(data: newCycleFormData) {
     const id = String(new Date().getTime())
@@ -72,6 +66,7 @@ console.log(task);
   }
   return (
     <form action=''
+    onSubmit={handleSubmit(handleSubmitForm)}
       className='flex flex-col items-center gap-14'>
       <FormProvider {...newCycleFrom}>
         <NewCycleForm />
@@ -80,7 +75,7 @@ console.log(task);
       <Button disabled={!activeCycle && !task}
         type='submit' isStop={!!activeCycle}
         stopSystem={() => handleInterruptCycle()}
-        startSystem={handleSubmit(handleSubmitForm)}
+       // startSystem={handleSubmit(handleSubmitForm)}
       />
     </form>
   )

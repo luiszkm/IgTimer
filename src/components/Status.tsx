@@ -1,6 +1,6 @@
 
 interface StatusProps {
-  status?: 'finished' | 'failed',
+  status?: 'finished' | 'failed' | 'progress' ,
 
 }
 
@@ -10,12 +10,13 @@ export function Status({ status }: StatusProps) {
       <div className={
         status === 'finished' ? "w-2 h-2 rounded-full bg-[#04D361]" :
           status === 'failed' ? "w-2 h-2 rounded-full bg-[#AB222E]" :
-            "w-2 h-2 rounded-full bg-[#FBA94C]"}></div>
+          status === 'progress' ? "w-2 h-2 rounded-full bg-[#FBA94C]" : ''}></div>
       <span>
         {
           status === 'finished' ? "Concluído" :
           status === 'failed' ? "Interrompido" :
-          "Em andamento"
+          status === 'progress' ? "Em andamento" :
+          ""
         }
       </span>
     </div>
